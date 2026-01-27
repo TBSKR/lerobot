@@ -1,0 +1,259 @@
+{
+  "categories": [
+    {
+      "name": "Motors",
+      "slug": "motors",
+      "description": "Servo motors for robot arm joints",
+      "icon": "cog",
+      "sort_order": 1
+    },
+    {
+      "name": "Electronics",
+      "slug": "electronics",
+      "description": "Motor controllers and driver boards",
+      "icon": "cpu",
+      "sort_order": 2
+    },
+    {
+      "name": "Power",
+      "slug": "power",
+      "description": "Power supplies and batteries",
+      "icon": "zap",
+      "sort_order": 3
+    },
+    {
+      "name": "Cables",
+      "slug": "cables",
+      "description": "Cables and connectors",
+      "icon": "link",
+      "sort_order": 4
+    },
+    {
+      "name": "Cameras",
+      "slug": "cameras",
+      "description": "Cameras for visual feedback",
+      "icon": "camera",
+      "sort_order": 5
+    },
+    {
+      "name": "Compute",
+      "slug": "compute",
+      "description": "Computing hardware",
+      "icon": "server",
+      "sort_order": 6
+    },
+    {
+      "name": "3D Printed Parts",
+      "slug": "3d-printed",
+      "description": "3D printed structural components",
+      "icon": "box",
+      "sort_order": 7
+    }
+  ],
+  "components": [
+    {
+      "name": "Feetech STS3215 (1/345 gear ratio)",
+      "slug": "feetech-sts3215-345",
+      "category_slug": "motors",
+      "description": "High-torque serial bus servo with 1/345 gear ratio. Standard motor for SO-101 follower arm (all 6 joints) and leader arm joint 2.",
+      "specifications": {
+        "model": "STS3215",
+        "gear_ratio": "1/345",
+        "voltage": "6-12.6V",
+        "stall_torque": "19.5 kg.cm @ 12V",
+        "no_load_speed": "55 RPM @ 12V",
+        "weight": "78g",
+        "dimensions": "40.2 x 20.2 x 40.5mm",
+        "interface": "TTL Serial Bus",
+        "position_resolution": "4096 steps",
+        "feedback": "Position, Speed, Load, Voltage, Temperature"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 6,
+      "arm_type": "follower"
+    },
+    {
+      "name": "Feetech STS3215 (1/191 gear ratio)",
+      "slug": "feetech-sts3215-191",
+      "category_slug": "motors",
+      "description": "Serial bus servo with 1/191 gear ratio. Used for SO-101 leader arm joints 1 and 3 for smoother manual control.",
+      "specifications": {
+        "model": "STS3215",
+        "gear_ratio": "1/191",
+        "voltage": "6-12.6V",
+        "stall_torque": "10.8 kg.cm @ 12V",
+        "no_load_speed": "100 RPM @ 12V",
+        "weight": "78g",
+        "dimensions": "40.2 x 20.2 x 40.5mm",
+        "interface": "TTL Serial Bus",
+        "position_resolution": "4096 steps"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 2,
+      "arm_type": "leader"
+    },
+    {
+      "name": "Feetech STS3215 (1/147 gear ratio)",
+      "slug": "feetech-sts3215-147",
+      "category_slug": "motors",
+      "description": "Serial bus servo with 1/147 gear ratio. Used for SO-101 leader arm joints 4, 5, and 6 for precise wrist control.",
+      "specifications": {
+        "model": "STS3215",
+        "gear_ratio": "1/147",
+        "voltage": "6-12.6V",
+        "stall_torque": "8.4 kg.cm @ 12V",
+        "no_load_speed": "130 RPM @ 12V",
+        "weight": "78g",
+        "dimensions": "40.2 x 20.2 x 40.5mm",
+        "interface": "TTL Serial Bus",
+        "position_resolution": "4096 steps"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 3,
+      "arm_type": "leader"
+    },
+    {
+      "name": "Waveshare Serial Bus Servo Driver Board",
+      "slug": "waveshare-servo-driver",
+      "category_slug": "electronics",
+      "description": "USB to TTL serial bus servo driver board. Controls up to 253 daisy-chained servos. Required for SO-101.",
+      "specifications": {
+        "interface": "USB Type-C",
+        "protocol": "TTL Serial Bus",
+        "max_servos": 253,
+        "voltage_input": "6-12.6V DC",
+        "baud_rate": "1Mbps max",
+        "dimensions": "48 x 24mm"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 1,
+      "arm_type": "both"
+    },
+    {
+      "name": "12V 5A DC Power Supply",
+      "slug": "12v-5a-power-supply",
+      "category_slug": "power",
+      "description": "12V 5A DC power adapter with 5.5x2.1mm barrel connector. Powers the servo motors.",
+      "specifications": {
+        "output_voltage": "12V DC",
+        "output_current": "5A",
+        "power": "60W",
+        "connector": "5.5x2.1mm barrel",
+        "input_voltage": "100-240V AC"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 1,
+      "arm_type": "both"
+    },
+    {
+      "name": "3-Pin TTL Servo Cable (200mm)",
+      "slug": "servo-cable-200mm",
+      "category_slug": "cables",
+      "description": "3-pin TTL serial bus servo cable, 200mm length. Connects motors in daisy chain.",
+      "specifications": {
+        "length": "200mm",
+        "connector": "3-pin JST",
+        "wire_gauge": "22 AWG"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 5,
+      "arm_type": "both"
+    },
+    {
+      "name": "USB-C Cable (1m)",
+      "slug": "usb-c-cable-1m",
+      "category_slug": "cables",
+      "description": "USB-C cable for connecting the servo driver board to computer.",
+      "specifications": {
+        "length": "1m",
+        "connector_a": "USB-A",
+        "connector_b": "USB-C",
+        "data_transfer": "USB 2.0"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 1,
+      "arm_type": "both"
+    },
+    {
+      "name": "Logitech C920 HD Webcam",
+      "slug": "logitech-c920",
+      "category_slug": "cameras",
+      "description": "Full HD webcam with autofocus. Popular choice for robotics due to good OpenCV compatibility.",
+      "specifications": {
+        "resolution": "1920x1080 @ 30fps",
+        "field_of_view": "78 degrees",
+        "autofocus": true,
+        "interface": "USB 2.0",
+        "mount": "Clip or tripod"
+      },
+      "is_default_for_so101": true,
+      "quantity_per_arm": 1,
+      "arm_type": "both"
+    },
+    {
+      "name": "Intel RealSense D435",
+      "slug": "realsense-d435",
+      "category_slug": "cameras",
+      "description": "Stereo depth camera with RGB. Provides depth data for 3D perception and manipulation tasks.",
+      "specifications": {
+        "depth_resolution": "1280x720 @ 90fps",
+        "rgb_resolution": "1920x1080 @ 30fps",
+        "depth_range": "0.2m - 10m",
+        "field_of_view": "87° x 58°",
+        "interface": "USB 3.0 Type-C",
+        "depth_technology": "Active IR stereo"
+      },
+      "is_default_for_so101": false,
+      "quantity_per_arm": 1,
+      "arm_type": "both"
+    },
+    {
+      "name": "Generic USB Webcam (720p)",
+      "slug": "generic-webcam-720p",
+      "category_slug": "cameras",
+      "description": "Budget-friendly USB webcam. Basic option for getting started.",
+      "specifications": {
+        "resolution": "1280x720 @ 30fps",
+        "interface": "USB 2.0",
+        "field_of_view": "60 degrees"
+      },
+      "is_default_for_so101": false,
+      "quantity_per_arm": 1,
+      "arm_type": "both"
+    },
+    {
+      "name": "NVIDIA Jetson Orin Nano",
+      "slug": "jetson-orin-nano",
+      "category_slug": "compute",
+      "description": "Compact AI computer with NVIDIA GPU. Good for edge deployment of trained models.",
+      "specifications": {
+        "gpu": "NVIDIA Ampere (1024 CUDA cores)",
+        "cpu": "6-core ARM Cortex-A78AE",
+        "memory": "8GB LPDDR5",
+        "storage": "NVMe SSD (not included)",
+        "power": "7-15W",
+        "ai_performance": "40 TOPS"
+      },
+      "is_default_for_so101": false,
+      "quantity_per_arm": 1,
+      "arm_type": null
+    },
+    {
+      "name": "Raspberry Pi 5 (8GB)",
+      "slug": "raspberry-pi-5-8gb",
+      "category_slug": "compute",
+      "description": "Latest Raspberry Pi with improved CPU. Suitable for inference with CPU-based models.",
+      "specifications": {
+        "cpu": "Broadcom BCM2712 (4-core Cortex-A76)",
+        "memory": "8GB LPDDR4X",
+        "gpu": "VideoCore VII",
+        "storage": "microSD / NVMe (via HAT)",
+        "power": "5V 5A USB-C",
+        "connectivity": "WiFi 6, Bluetooth 5.0, Gigabit Ethernet"
+      },
+      "is_default_for_so101": false,
+      "quantity_per_arm": 1,
+      "arm_type": null
+    }
+  ]
+}

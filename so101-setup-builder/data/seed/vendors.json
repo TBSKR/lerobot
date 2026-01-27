@@ -1,0 +1,160 @@
+{
+  "vendors": [
+    {
+      "name": "AliExpress",
+      "slug": "aliexpress",
+      "website_url": "https://www.aliexpress.com",
+      "description": "Chinese e-commerce platform with competitive prices. Longer shipping times but good for bulk orders.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 21
+    },
+    {
+      "name": "Amazon",
+      "slug": "amazon",
+      "website_url": "https://www.amazon.com",
+      "description": "Fast shipping, reliable returns. Prices may be higher than direct from manufacturer.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 3
+    },
+    {
+      "name": "Waveshare",
+      "slug": "waveshare",
+      "website_url": "https://www.waveshare.com",
+      "description": "Direct manufacturer of the servo driver board. Good for electronics and development boards.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 14
+    },
+    {
+      "name": "RobotShop",
+      "slug": "robotshop",
+      "website_url": "https://www.robotshop.com",
+      "description": "Robotics-focused retailer with good selection and technical support.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 7
+    },
+    {
+      "name": "Feetech",
+      "slug": "feetech",
+      "website_url": "https://www.feetechrc.com",
+      "description": "Direct manufacturer of STS3215 servos. Best for bulk orders.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 14
+    },
+    {
+      "name": "Intel",
+      "slug": "intel",
+      "website_url": "https://store.intel.com",
+      "description": "Official Intel store for RealSense cameras.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 5
+    },
+    {
+      "name": "NVIDIA",
+      "slug": "nvidia",
+      "website_url": "https://store.nvidia.com",
+      "description": "Official NVIDIA store for Jetson products.",
+      "is_active": true,
+      "ships_to_us": true,
+      "ships_to_eu": true,
+      "typical_shipping_days": 5
+    }
+  ],
+  "sample_prices": [
+    {
+      "component_slug": "feetech-sts3215-345",
+      "vendor_slug": "aliexpress",
+      "price": 24.99,
+      "product_url": "https://www.aliexpress.com/item/feetech-sts3215"
+    },
+    {
+      "component_slug": "feetech-sts3215-345",
+      "vendor_slug": "amazon",
+      "price": 34.99,
+      "product_url": "https://www.amazon.com/dp/B0EXAMPLE"
+    },
+    {
+      "component_slug": "feetech-sts3215-191",
+      "vendor_slug": "aliexpress",
+      "price": 24.99,
+      "product_url": "https://www.aliexpress.com/item/feetech-sts3215-191"
+    },
+    {
+      "component_slug": "feetech-sts3215-147",
+      "vendor_slug": "aliexpress",
+      "price": 24.99,
+      "product_url": "https://www.aliexpress.com/item/feetech-sts3215-147"
+    },
+    {
+      "component_slug": "waveshare-servo-driver",
+      "vendor_slug": "waveshare",
+      "price": 9.99,
+      "product_url": "https://www.waveshare.com/serial-bus-servo-driver.htm"
+    },
+    {
+      "component_slug": "waveshare-servo-driver",
+      "vendor_slug": "amazon",
+      "price": 14.99,
+      "product_url": "https://www.amazon.com/dp/B0WAVESHARE"
+    },
+    {
+      "component_slug": "12v-5a-power-supply",
+      "vendor_slug": "amazon",
+      "price": 12.99,
+      "product_url": "https://www.amazon.com/dp/B0POWER"
+    },
+    {
+      "component_slug": "servo-cable-200mm",
+      "vendor_slug": "aliexpress",
+      "price": 0.99,
+      "product_url": "https://www.aliexpress.com/item/servo-cable"
+    },
+    {
+      "component_slug": "logitech-c920",
+      "vendor_slug": "amazon",
+      "price": 69.99,
+      "product_url": "https://www.amazon.com/dp/B006JH8T3S"
+    },
+    {
+      "component_slug": "realsense-d435",
+      "vendor_slug": "intel",
+      "price": 359.00,
+      "product_url": "https://store.intel.com/realsense-d435"
+    },
+    {
+      "component_slug": "realsense-d435",
+      "vendor_slug": "amazon",
+      "price": 379.00,
+      "product_url": "https://www.amazon.com/dp/B07BLS5477"
+    },
+    {
+      "component_slug": "generic-webcam-720p",
+      "vendor_slug": "amazon",
+      "price": 19.99,
+      "product_url": "https://www.amazon.com/dp/B0WEBCAM"
+    },
+    {
+      "component_slug": "jetson-orin-nano",
+      "vendor_slug": "nvidia",
+      "price": 499.00,
+      "product_url": "https://store.nvidia.com/jetson-orin-nano"
+    },
+    {
+      "component_slug": "raspberry-pi-5-8gb",
+      "vendor_slug": "amazon",
+      "price": 79.99,
+      "product_url": "https://www.amazon.com/dp/B0RPI5"
+    }
+  ]
+}
