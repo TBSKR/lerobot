@@ -232,10 +232,11 @@ class OpenCVCamera(Camera):
         if self.fps is None:
             raise ValueError(f"{self} FPS is not set")
 
-        success = self.videocapture.set(cv2.CAP_PROP_FPS, float(self.fps))
+        self.videocapture.set(cv2.CAP_PROP_FPS, float(self.fps))
         actual_fps = self.videocapture.get(cv2.CAP_PROP_FPS)
-        # Use math.isclose for robust float comparison
-        if not success or not math.isclose(self.fps, actual_fps, rel_tol=1e-3):
+        # macOS OpenCV returns success=False for set(CAP_PROP_FPS) even when fps is set correctly,
+        # so only validate the actual value.
+        if not math.isclose(self.fps, actual_fps, rel_tol=1e-3):
             raise RuntimeError(f"{self} failed to set fps={self.fps} ({actual_fps=}).")
 
     def _validate_fourcc(self) -> None:
