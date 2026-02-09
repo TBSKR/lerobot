@@ -63,6 +63,7 @@ lerobot-record \
 """
 
 import logging
+import os
 import time
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -318,6 +319,10 @@ def record_loop(
         preprocessor.reset()
         postprocessor.reset()
 
+    # Snapshot IPC for dashboard live preview
+    _snapshot_dir = os.environ.get("LEROBOT_SNAPSHOT_DIR")
+    _snapshot_frame_count = 0
+
     timestamp = 0
     start_episode_t = time.perf_counter()
     while timestamp < control_time_s:
@@ -329,6 +334,24 @@ def record_loop(
 
         # Get robot observation
         obs = robot.get_observation()
+
+        # Write snapshot for dashboard live preview (~5 FPS at 30 FPS recording)
+        if _snapshot_dir:
+            _snapshot_frame_count += 1
+            if _snapshot_frame_count % max(fps // 5, 1) == 0:
+                try:
+                    import cv2 as _cv2
+                    _snap_path = Path(_snapshot_dir)
+                    for _cam_key, _cam_val in obs.items():
+                        if hasattr(_cam_val, 'shape') and len(getattr(_cam_val, 'shape', ())) == 3:
+                            # Extract camera name from key like "observation.images.front"
+                            _cam_name = _cam_key.rsplit(".", 1)[-1] if "." in _cam_key else _cam_key
+                            _tmp = _snap_path / f"{_cam_name}.tmp.jpg"
+                            _final = _snap_path / f"{_cam_name}.jpg"
+                            _cv2.imwrite(str(_tmp), _cv2.cvtColor(_cam_val, _cv2.COLOR_RGB2BGR))
+                            _tmp.rename(_final)  # atomic rename
+                except Exception:
+                    pass  # Never let snapshot writing break recording
 
         # Applies a pipeline to the raw robot observation, default is IdentityProcessor
         obs_processed = robot_observation_processor(obs)
